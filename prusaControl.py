@@ -1,7 +1,8 @@
 import serial
 import time
 
-ser = serial.Serial('/dev/tty.usbmodem14201', 115200)
+#ser = serial.Serial('/dev/tty.usbmodem14201', 115200) # Used on MAC
+ser = serial.Serial(port = "COM13", baudrate=115200)
 
 time.sleep(2)
 ser.write(b'G28\r\n')
