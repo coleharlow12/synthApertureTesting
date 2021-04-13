@@ -18,14 +18,14 @@ setup(ser,maxX,maxZ)
 Meas = Measurement()
 
 # Specify the Measurement Locations
-mLocs = PreMeas(xStart=5,zStart=100,xSteps=5,zSteps=10,xSpace=10,zSpace=5,path=Meas.storPathPy)
+mLocs = PreMeas(xStart=5,zStart=80,xSteps=8,zSteps=8,xSpace=7.5,zSpace=7.5,path=Meas.storPathPy)
 mLocs.genPoints()
 mLocs.savePoints()
 
 for coordIn in range(0,(mLocs.measLocs.shape[0])):
 	# Move to the First Measurement Location
 	DoMove(ser=ser,coords=mLocs.measLocs[coordIn,:],xSpeed=maxX,zSpeed=maxZ)
-	time.sleep(1)
+	time.sleep(3)
 	Meas.takeMeasure()
 
 

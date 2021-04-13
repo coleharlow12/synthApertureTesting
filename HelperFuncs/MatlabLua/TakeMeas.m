@@ -15,7 +15,7 @@ function done=TakeMeas(init,fpath)
         Lua_String = "ar1.CaptureCardConfig_StartRecord("+"'"+string(fpath)+"',1)"
         ErrStatus = RtttNetClientAPI.RtttNetClient.SendCommand(Lua_String);
         %Take the Measurement
-        Lua_String = "ar1.StartFrame()";
+        Lua_String = "ar1.StartFrame()"
         ErrStatus = RtttNetClientAPI.RtttNetClient.SendCommand(Lua_String);
         
     end

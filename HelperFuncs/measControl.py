@@ -28,8 +28,8 @@ class Measurement(object):
 					if num>iM:
 						iM = num
 
-		self.storPathPy = self.storPathPy + '\\Measurement'+str(iM+1) + '\\'
-		self.storPathLua = self.storPathLua + '\\\\Measurement'+ str(iM+1) + '\\\\'
+		self.storPathPy = self.storPathPy + 'Measurement'+str(iM+1) + '\\'
+		self.storPathLua = self.storPathLua + 'Measurement'+ str(iM+1) + '\\\\'
 		os.mkdir(self.storPathPy)
 
 		#Initialize NET framework used to communicate with Radar
