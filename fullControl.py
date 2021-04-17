@@ -25,7 +25,7 @@ mLocs.savePoints()
 for coordIn in range(0,(mLocs.measLocs.shape[0])):
 	# Move to the First Measurement Location
 	DoMove(ser=ser,coords=mLocs.measLocs[coordIn,:],xSpeed=maxX,zSpeed=maxZ)
-	time.sleep(1)
+	time.sleep(0)
 	Meas.takeMeasure()
 
 
