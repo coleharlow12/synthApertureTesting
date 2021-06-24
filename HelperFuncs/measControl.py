@@ -3,7 +3,7 @@ import os #Used for file handling
 
 
 class Measurement(object):
-	def __init__(self):
+	def __init__(self,initMat = True):
 		self.storPathPy = 'C:\\Users\\ColeHarlow\\Documents\\GitHub\\synthApertureTesting\\Measurements\\'
 		self.storPathLua = 'C:\\\\Users\\\\ColeHarlow\\\\Documents\\\\GitHub\\\\synthApertureTesting\\\\Measurements\\\\'
 		self.basename = 'ADCdata'
@@ -34,7 +34,9 @@ class Measurement(object):
 
 		#Initialize NET framework used to communicate with Radar
 		self.eng.addpath('C:\\Users\\ColeHarlow\\Documents\\GitHub\\synthApertureTesting\\HelperFuncs\\MatlabLua')
-		self.initNET()
+
+		if initMat:
+			self.initNET()
 
 	def initNET(self):
 		self.eng.TakeMeas(1,0)
