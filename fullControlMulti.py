@@ -33,12 +33,12 @@ for coordIn in range(0,(mLocs.measLocs.shape[0])):
 	# Move to the First Measurement Location
 	DoMove(ser=ser,coords=mLocs.measLocs[coordIn,:],xSpeed=maxX,zSpeed=maxZ)
 	time.sleep(0)
-	#Meas.takeMeasure()
+	Meas.takeMeasure()
 
-Meas1 = Measurement(initMat=False)
+#Meas1 = Measurement(initMat=True)
 
 # Specify the Measurement Locations
-mLocs = PreMeas(xStart=start[1][0],zStart=start[1][1],xSteps=8,zSteps=16,xSpace=5,zSpace=2.5,path=Meas1.storPathPy)
+mLocs = PreMeas(xStart=start[1][0],zStart=start[1][1],xSteps=8,zSteps=16,xSpace=5,zSpace=2.5,path=Meas.storPathPy)
 mLocs.genPoints()
 mLocs.savePoints()
 
@@ -46,4 +46,4 @@ for coordIn in range(0,(mLocs.measLocs.shape[0])):
 	# Move to the First Measurement Location
 	DoMove(ser=ser,coords=mLocs.measLocs[coordIn,:],xSpeed=maxX,zSpeed=maxZ)
 	time.sleep(0)
-	#Meas1.takeMeasure()
+	Meas.takeMeasure()
