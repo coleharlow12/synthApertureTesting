@@ -37,6 +37,6 @@ def checkOk(ser):
 #First it checks that the move command responds with ok. Next
 def isDone(ser):
 	checkOk(ser)
-	ser.write(b'M400\n')
+	ser.write(b'M400\n') #Tells the printer to wait to finish the move before doing next task
 	checkOk(ser)
 	return(0)
